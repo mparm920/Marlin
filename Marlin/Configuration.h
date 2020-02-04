@@ -164,13 +164,13 @@
  * Additional options to configure custom E moves are pending.
  */
 //#define MK2_MULTIPLEXER
-#if ENABLED(MK2_MULTIPLEXER)
+//#if ENABLED(MK2_MULTIPLEXER)
   // Override the default DIO selector pins here, if needed.
   // Some pins files may provide defaults for these pins.
   //#define E_MUX0_PIN 40  // Always Required
   //#define E_MUX1_PIN 42  // Needed for 3 to 8 inputs
   //#define E_MUX2_PIN 44  // Needed for 5 to 8 inputs
-#endif
+//#endif
 
 /**
  * Prusa Multi-Material Unit v2
@@ -184,21 +184,21 @@
 
 // A dual extruder that uses a single stepper motor
 //#define SWITCHING_EXTRUDER
-#if ENABLED(SWITCHING_EXTRUDER)
-  #define SWITCHING_EXTRUDER_SERVO_NR 0
-  #define SWITCHING_EXTRUDER_SERVO_ANGLES { 0, 90 } // Angles for E0, E1[, E2, E3]
-  #if EXTRUDERS > 3
-    #define SWITCHING_EXTRUDER_E23_SERVO_NR 1
-  #endif
-#endif
+// #if ENABLED(SWITCHING_EXTRUDER)
+//   #define SWITCHING_EXTRUDER_SERVO_NR 0
+//   #define SWITCHING_EXTRUDER_SERVO_ANGLES { 0, 90 } // Angles for E0, E1[, E2, E3]
+//   #if EXTRUDERS > 3
+//     #define SWITCHING_EXTRUDER_E23_SERVO_NR 1
+//   #endif
+// #endif
 
 // A dual-nozzle that uses a servomotor to raise/lower one (or both) of the nozzles
 //#define SWITCHING_NOZZLE
-#if ENABLED(SWITCHING_NOZZLE)
-  #define SWITCHING_NOZZLE_SERVO_NR 0
-  //#define SWITCHING_NOZZLE_E1_SERVO_NR 1          // If two servos are used, the index of the second
-  #define SWITCHING_NOZZLE_SERVO_ANGLES { 0, 90 }   // Angles for E0, E1 (single servo) or lowered/raised (dual servo)
-#endif
+// #if ENABLED(SWITCHING_NOZZLE)
+//   #define SWITCHING_NOZZLE_SERVO_NR 0
+//   //#define SWITCHING_NOZZLE_E1_SERVO_NR 1          // If two servos are used, the index of the second
+//   #define SWITCHING_NOZZLE_SERVO_ANGLES { 0, 90 }   // Angles for E0, E1 (single servo) or lowered/raised (dual servo)
+// #endif
 
 /**
  * Two separate X-carriages with extruders that connect to a moving part
@@ -217,17 +217,19 @@
 //#define MAGNETIC_PARKING_EXTRUDER
 
 //#if EITHER(PARKING_EXTRUDER, MAGNETIC_PARKING_EXTRUDER)
-#if ENABLED(PARKING_EXTRUDER)
-  #define PARKING_EXTRUDER_PARKING_X { -78, 184 }     // X positions for parking the extruders
-  #define PARKING_EXTRUDER_GRAB_DISTANCE 1            // (mm) Distance to move beyond the parking point to grab the extruder
-  //#define MANUAL_SOLENOID_CONTROL                   // Manual control of docking solenoids with M380 S / M381
+// #if ENABLED(PARKING_EXTRUDER)
+//   #define PARKING_EXTRUDER_PARKING_X { -78, 184 }     // X positions for parking the extruders
+//   #define PARKING_EXTRUDER_GRAB_DISTANCE 1            // (mm) Distance to move beyond the parking point to grab the extruder
+//   //#define MANUAL_SOLENOID_CONTROL                   // Manual control of docking solenoids with M380 S / M381
 
   
 
-    #define PARKING_EXTRUDER_SOLENOIDS_INVERT           // If enabled, the solenoid is NOT magnetized with applied voltage
-    #define PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE LOW  // LOW or HIGH pin signal energizes the coil
-    #define PARKING_EXTRUDER_SOLENOIDS_DELAY 250        // (ms) Delay for magnetic field. No delay if 0 or not defined.
-    #define PARKING_EXTRUDER_SECURITY_RAISE 5 
+//     #define PARKING_EXTRUDER_SOLENOIDS_INVERT           // If enabled, the solenoid is NOT magnetized with applied voltage
+//     #define PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE LOW  // LOW or HIGH pin signal energizes the coil
+//     #define PARKING_EXTRUDER_SOLENOIDS_DELAY 250        // (ms) Delay for magnetic field. No delay if 0 or not defined.
+//     #define PARKING_EXTRUDER_SECURITY_RAISE 5 
+//     #define HOTEND_OFFSET_Z { 0.0, 1.3 }                // Z-offsets of the two hotends. The first must be 0.
+
     //#define MANUAL_SOLENOID_CONTROL                   // Manual control of docking solenoids with M380 S / M381
 
   // #elif ENABLED(MAGNETIC_PARKING_EXTRUDER)
@@ -239,7 +241,7 @@
 
   // #endif
 
-#endif
+//#endif
 
 /**
  * Switching Toolhead
@@ -298,15 +300,15 @@
  *   - Enable DIRECT_MIXING_IN_G1 for M165 and mixing in G1 (from Pia Taubert's reference implementation).
  */
 //#define MIXING_EXTRUDER
-#if ENABLED(MIXING_EXTRUDER)
-  #define MIXING_STEPPERS 2        // Number of steppers in your mixing extruder
-  #define MIXING_VIRTUAL_TOOLS 16  // Use the Virtual Tool method with M163 and M164
+// #if ENABLED(MIXING_EXTRUDER)
+//   #define MIXING_STEPPERS 2        // Number of steppers in your mixing extruder
+//   #define MIXING_VIRTUAL_TOOLS 16  // Use the Virtual Tool method with M163 and M164
   //#define DIRECT_MIXING_IN_G1    // Allow ABCDHI mix factors in G1 movement commands
   //#define GRADIENT_MIX           // Support for gradient mixing with M166 and LCD
   //#if ENABLED(GRADIENT_MIX)
     //#define GRADIENT_VTOOL       // Add M166 T to use a V-tool index as a Gradient alias
   //#endif
-#endif
+//#endif
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
@@ -326,23 +328,23 @@
 //#define PSU_CONTROL
 //#define PSU_NAME "Power Supply"
 
-#if ENABLED(PSU_CONTROL)
-  //#define PSU_ACTIVE_HIGH false     // Set 'false' for ATX, 'true' for X-Box
+// #if ENABLED(PSU_CONTROL)
+//   //#define PSU_ACTIVE_HIGH false     // Set 'false' for ATX, 'true' for X-Box
 
-  //#define PSU_DEFAULT_OFF         // Keep power off until enabled directly with M80
-  //#define PSU_POWERUP_DELAY 100   // (ms) Delay for the PSU to warm up to full power
+//   //#define PSU_DEFAULT_OFF         // Keep power off until enabled directly with M80
+//   //#define PSU_POWERUP_DELAY 100   // (ms) Delay for the PSU to warm up to full power
 
-  //#define AUTO_POWER_CONTROL  // Enable automatic control of the PS_ON pin
-  #if ENABLED(AUTO_POWER_CONTROL)
-    #define AUTO_POWER_FANS           // Turn on PSU if fans need power
-    #define AUTO_POWER_E_FANS
-    #define AUTO_POWER_CONTROLLERFAN
-    //#define AUTO_POWER_CHAMBER_FAN
-    //#define AUTO_POWER_E_TEMP        50 // (°C) Turn on PSU over this temperature
-    //#define AUTO_POWER_CHAMBER_TEMP  30 // (°C) Turn on PSU over this temperature
-    #define POWER_TIMEOUT 30
-  #endif
-#endif
+//   //#define AUTO_POWER_CONTROL  // Enable automatic control of the PS_ON pin
+//   #if ENABLED(AUTO_POWER_CONTROL)
+//     #define AUTO_POWER_FANS           // Turn on PSU if fans need power
+//     #define AUTO_POWER_E_FANS
+//     #define AUTO_POWER_CONTROLLERFAN
+//     //#define AUTO_POWER_CHAMBER_FAN
+//     //#define AUTO_POWER_E_TEMP        50 // (°C) Turn on PSU over this temperature
+//     //#define AUTO_POWER_CHAMBER_TEMP  30 // (°C) Turn on PSU over this temperature
+//     #define POWER_TIMEOUT 30
+//   #endif
+// #endif
 
 // @section temperature
 
@@ -941,11 +943,13 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define X_NOZZLE_TO_PROBE_OFFSET 5   // X offset: -left  +right  [of the nozzle]
-#define Y_NOZZLE_TO_PROBE_OFFSET -65   // Y offset: -front +behind [the nozzle]
-#define Z_NOZZLE_TO_PROBE_OFFSET 0   // Z offset: -below +above  [the nozzle]
+//#define X_PROBE_OFFSET_FROM_EXTRUDER 5
+//#define Y_PROBE_OFFSET_FROM_EXTRUDER -65
+// #define X_NOZZLE_TO_PROBE_OFFSET -5   // X offset: -left  +right  [of the nozzle]
+// #define Y_NOZZLE_TO_PROBE_OFFSET 65   // Y offset: -front +behind [the nozzle]
+// #define Z_NOZZLE_TO_PROBE_OFFSET 0   // Z offset: -below +above  [the nozzle]
 
-//#define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 5, -65, 0 }
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10
@@ -993,8 +997,8 @@
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
-#define Z_PROBE_OFFSET_RANGE_MIN -20
-#define Z_PROBE_OFFSET_RANGE_MAX 20
+//#define Z_PROBE_OFFSET_RANGE_MIN -20
+//#define Z_PROBE_OFFSET_RANGE_MAX 20
 
 // Enable the M48 repeatability test to test probe accuracy
 //#define Z_MIN_PROBE_REPEATABILITY_TEST
@@ -1080,8 +1084,8 @@
 #define Y_BED_SIZE 220
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -33
-#define Y_MIN_POS -10
+#define X_MIN_POS 0
+#define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1140,12 +1144,12 @@
   // a feed tube. Requires 4 bytes SRAM per sensor, plus 4 bytes overhead.
   //#define FILAMENT_RUNOUT_DISTANCE_MM 25
 
-  #ifdef FILAMENT_RUNOUT_DISTANCE_MM
+  //#ifdef FILAMENT_RUNOUT_DISTANCE_MM
     // Enable this option to use an encoder disc that toggles the runout pin
     // as the filament moves. (Be sure to set FILAMENT_RUNOUT_DISTANCE_MM
     // large enough to avoid false positives.)
     //#define FILAMENT_MOTION_SENSOR
-  #endif
+  //#endif
 #endif
 
 //===========================================================================
@@ -1216,7 +1220,10 @@
   // contours of the bed more closely than edge-to-edge straight moves.
   #define SEGMENT_LEVELED_MOVES
   #define LEVELED_SEGMENT_LENGTH 5.0 // (mm) Length of all segments (except the last one)
-
+  #define MIN_PROBE_EDGE_LEFT 0
+  #define MIN_PROBE_EDGE_RIGHT 0
+  #define MIN_PROBE_EDGE_BACK 0
+  #define MIN_PROBE_EDGE_FRONT 0
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
@@ -1307,7 +1314,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-//#define LCD_BED_LEVELING
+#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
@@ -1316,7 +1323,7 @@
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-//#define LEVEL_BED_CORNERS
+#define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
   #define LEVEL_CORNERS_INSET 30    // (mm) An inset for corner leveling
@@ -1339,8 +1346,8 @@
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-//#define MANUAL_X_HOME_POS 0
-//#define MANUAL_Y_HOME_POS 0
+#define MANUAL_X_HOME_POS -7
+#define MANUAL_Y_HOME_POS 17
 //#define MANUAL_Z_HOME_POS 0
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
@@ -1352,7 +1359,7 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).
@@ -1655,7 +1662,7 @@
  * you must uncomment the following option or it won't work.
  *
  */
-#define SDSUPPORT
+//#define SDSUPPORT
 
 /**
  * SD CARD: SPI SPEED
@@ -1735,7 +1742,7 @@
 //
 // Add individual axis homing items (Home X, Home Y, and Home Z) to the LCD menu.
 //
-//#define INDIVIDUAL_AXIS_HOMING_MENU
+#define INDIVIDUAL_AXIS_HOMING_MENU
 
 //
 // SPEAKER/BUZZER
