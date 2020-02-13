@@ -177,24 +177,14 @@
  * Thermal Protection parameters for the bed are just as above for hotends.
  */
 #if ENABLED(THERMAL_PROTECTION_BED)
-<<<<<<< HEAD
-  #define THERMAL_PROTECTION_BED_PERIOD 60    // Seconds
-  #define THERMAL_PROTECTION_BED_HYSTERESIS 5 // Degrees Celsius
-=======
   #define THERMAL_PROTECTION_BED_PERIOD        20 // Seconds
   #define THERMAL_PROTECTION_BED_HYSTERESIS     2 // Degrees Celsius
->>>>>>> f6eed33a38d82103eaef3f37c20dd6b53cc2fdf1
 
   /**
    * As described above, except for the bed (M140/M190/M303).
    */
-<<<<<<< HEAD
-  #define WATCH_BED_TEMP_PERIOD 180               // Seconds
-  #define WATCH_BED_TEMP_INCREASE 2               // Degrees Celsius
-=======
   #define WATCH_BED_TEMP_PERIOD                60 // Seconds
   #define WATCH_BED_TEMP_INCREASE               2 // Degrees Celsius
->>>>>>> f6eed33a38d82103eaef3f37c20dd6b53cc2fdf1
 #endif
 
 /**
@@ -1594,11 +1584,8 @@
 //
 // G2/G3 Arc Support
 //
-<<<<<<< HEAD
-//#define ARC_SUPPORT               // Disable this feature to save ~3226 bytes
-=======
+
 #define ARC_SUPPORT                 // Disable this feature to save ~3226 bytes
->>>>>>> f6eed33a38d82103eaef3f37c20dd6b53cc2fdf1
 #if ENABLED(ARC_SUPPORT)
   #define MM_PER_ARC_SEGMENT      1 // (mm) Length (or minimum length) of each arc segment
   //#define ARC_SEGMENTS_PER_R    1 // Max segment length, MM_PER = Min
