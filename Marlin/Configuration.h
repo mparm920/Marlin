@@ -411,21 +411,13 @@
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
 #define TEMP_SENSOR_0 5
-#define TEMP_SENSOR_1 0
-#define TEMP_SENSOR_2 0
-#define TEMP_SENSOR_3 0
-#define TEMP_SENSOR_4 0
-<<<<<<< HEAD
+//#define TEMP_SENSOR_1 0
+//#define TEMP_SENSOR_2 0
+//#define TEMP_SENSOR_3 0
+//#define TEMP_SENSOR_4 0
 //#define TEMP_SENSOR_5 0
-#define TEMP_SENSOR_BED 5
-=======
-#define TEMP_SENSOR_5 0
-#define TEMP_SENSOR_6 0
-#define TEMP_SENSOR_7 0
-#define TEMP_SENSOR_BED 0
-#define TEMP_SENSOR_PROBE 0
->>>>>>> f6eed33a38d82103eaef3f37c20dd6b53cc2fdf1
-#define TEMP_SENSOR_CHAMBER 0
+#define TEMP_SENSOR_BED 1
+//#define TEMP_SENSOR_CHAMBER 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
 #define DUMMY_THERMISTOR_998_VALUE 25
@@ -451,13 +443,9 @@
 #define HEATER_2_MINTEMP   5
 #define HEATER_3_MINTEMP   5
 #define HEATER_4_MINTEMP   5
-<<<<<<< HEAD
-//#define HEATER_5_MINTEMP   5
-=======
-#define HEATER_5_MINTEMP   5
-#define HEATER_6_MINTEMP   5
-#define HEATER_7_MINTEMP   5
->>>>>>> f6eed33a38d82103eaef3f37c20dd6b53cc2fdf1
+// #define HEATER_5_MINTEMP   5
+// #define HEATER_6_MINTEMP   5
+// #define HEATER_7_MINTEMP   5
 #define BED_MINTEMP        5
 
 // Above this temperature the heater will be switched off.
@@ -468,15 +456,10 @@
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
 #define HEATER_4_MAXTEMP 275
-<<<<<<< HEAD
-//#define HEATER_5_MAXTEMP 275
-#define BED_MAXTEMP      130
-=======
-#define HEATER_5_MAXTEMP 275
-#define HEATER_6_MAXTEMP 275
-#define HEATER_7_MAXTEMP 275
+// #define HEATER_5_MAXTEMP 275
+// #define HEATER_6_MAXTEMP 275
+// #define HEATER_7_MAXTEMP 275
 #define BED_MAXTEMP      150
->>>>>>> f6eed33a38d82103eaef3f37c20dd6b53cc2fdf1
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -760,7 +743,8 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 100 }
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 100 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -978,11 +962,11 @@
  */
 //#define X_PROBE_OFFSET_FROM_EXTRUDER 5
 //#define Y_PROBE_OFFSET_FROM_EXTRUDER -65
-// #define X_NOZZLE_TO_PROBE_OFFSET -5   // X offset: -left  +right  [of the nozzle]
-// #define Y_NOZZLE_TO_PROBE_OFFSET 65   // Y offset: -front +behind [the nozzle]
+//#define X_NOZZLE_TO_PROBE_OFFSET -5   // X offset: -left  +right  [of the nozzle]
+//#define Y_NOZZLE_TO_PROBE_OFFSET 65   // Y offset: -front +behind [the nozzle]
 // #define Z_NOZZLE_TO_PROBE_OFFSET 0   // Z offset: -below +above  [the nozzle]
 
-#define NOZZLE_TO_PROBE_OFFSET { 5, -65, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 5, -65, -2 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1094,13 +1078,9 @@
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
 #define INVERT_E4_DIR false
-<<<<<<< HEAD
-//#define INVERT_E5_DIR false
-=======
-#define INVERT_E5_DIR false
-#define INVERT_E6_DIR false
-#define INVERT_E7_DIR false
->>>>>>> f6eed33a38d82103eaef3f37c20dd6b53cc2fdf1
+// #define INVERT_E5_DIR false
+// #define INVERT_E6_DIR false
+// #define INVERT_E7_DIR false
 
 // @section homing
 
@@ -1260,10 +1240,10 @@
   // contours of the bed more closely than edge-to-edge straight moves.
   #define SEGMENT_LEVELED_MOVES
   #define LEVELED_SEGMENT_LENGTH 5.0 // (mm) Length of all segments (except the last one)
-  #define MIN_PROBE_EDGE_LEFT 0
-  #define MIN_PROBE_EDGE_RIGHT 0
-  #define MIN_PROBE_EDGE_BACK 0
-  #define MIN_PROBE_EDGE_FRONT 0
+  // #define MIN_PROBE_EDGE_LEFT 47
+  // #define MIN_PROBE_EDGE_RIGHT 20
+  // #define MIN_PROBE_EDGE_BACK 85
+  // #define MIN_PROBE_EDGE_FRONT 15
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
@@ -1366,7 +1346,7 @@
 #define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
-  #define LEVEL_CORNERS_INSET 30    // (mm) An inset for corner leveling
+  #define LEVEL_CORNERS_INSET 10    // (mm) An inset for corner leveling
   // #define LEVEL_CORNERS_Z_HOP  4.0  // (mm) Move nozzle up before moving between corners
   // #define LEVEL_CORNERS_HEIGHT 0.0  // (mm) Z height of nozzle at leveling points
   //#define LEVEL_CENTER_TOO        // Move to the center after the last corner
@@ -1386,8 +1366,8 @@
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-#define MANUAL_X_HOME_POS -7
-#define MANUAL_Y_HOME_POS 17
+#define MANUAL_X_HOME_POS -34
+#define MANUAL_Y_HOME_POS -5
 //#define MANUAL_Z_HOME_POS 0
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
@@ -1485,7 +1465,7 @@
  *   M501 - Read settings from EEPROM. (i.e., Throw away unsaved changes)
  *   M502 - Revert settings to "factory" defaults. (Follow with M500 to init the EEPROM.)
  */
-#define EEPROM_SETTINGS       // Persistent storage with M500 and M501
+//#define EEPROM_SETTINGS       // Persistent storage with M500 and M501
 //#define DISABLE_M503        // Saves ~2700 bytes of PROGMEM. Disable for release!
 // #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
 // #if ENABLED(EEPROM_SETTINGS)
